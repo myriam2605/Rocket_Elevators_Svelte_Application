@@ -15,12 +15,12 @@
 </script>
 
 <svelte:head>
-	<title>About</title>
+	<title>NFT Minting </title>
 	<meta name="description" content="About this app" />
 </svelte:head>
 
 <div class="content">
-	<h1>About this app</h1>
+	<h1>NFT Minting </h1>
 
 	<p>
 		This is a <a href="https://kit.svelte.dev">SvelteKit</a> app. You can make your own by typing the
@@ -36,7 +36,7 @@
 	</p>
 
 	<p>
-		The <a href="/todos">TODOs</a> page illustrates SvelteKit's data loading and form handling. Try using
+		The <a href="/todos">Portfolio</a> page illustrates SvelteKit's data loading and form handling. Try using
 		it with JavaScript disabled!
 	</p>
 </div>
