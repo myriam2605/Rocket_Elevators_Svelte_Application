@@ -78,6 +78,39 @@
 		</div>
 	{/each}
 </div>
+<div>
+    <section id="services">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-sm-4">
+                    <img class="img-fluid" src="../../src/lib/header/rocket1.svg" alt="img" />
+                    <h3 class="mt-10">Prices and Projects</h3>
+                    <p>Rocket Elevator is a company that has overcome several challenges since its launch. Thanks to its dedicated team, it has several awards in its field.</p>
+                    <a href="home.html#portfolio" class="btn btn-default">PORTFOLIO</a>
+                </div>
+
+                <div class="col-sm-4">
+                    <img class="img-fluid" src="../../src/lib/header/rocket2.svg" alt="img" />
+                    <h3 class="mt-10">Residential Buildings</h3>
+                    <p>With our products and services, we are committed to making your home comfortable and safe with good quality. We are always ready to advise you.</p>
+                    <a href="about.html" class="btn btn-default">RESIDENTIAL</a>
+                </div>
+
+                <div class="col-sm-4">
+                    <img class="img-fluid" src="../../src/lib/header/rocket3.svg" alt="img" />
+                    <h3 class="mt-10">Corporate Buildings</h3>
+                    <p>Thanks to the skills of our teams, we are ready to take up the challenge of offering you a quality office in a short time as you wish or better.</p>
+                <a href="todos.html" class="btn btn-default">CORPORATE</a>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+</div>
 
 <style>
 	.todos {
@@ -187,4 +220,51 @@
 		transition: opacity 0.2s;
 		opacity: 1;
 	}
+    .row {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        /* flex-wrap: wrap; */
+        margin-right: -15px;
+        margin-left: -15px;
+    }
+    .col-sm-4 {
+        position: relative;
+        width: 100%;
+        min-height: 1px;
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+    .container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
 </style>

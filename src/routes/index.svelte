@@ -3,31 +3,38 @@
 </script>
 
 <script>
-	import Counter from '$lib/Counter.svelte';
-</script>
+	// import Counter from '$lib/Counter.svelte';
+
+    import { Figure, Image } from 'sveltestrap';
+    
+  </script>
 
 <svelte:head>
 	<title>Home</title>
 	<meta name="description" content="Svelte demo app" />
 </svelte:head>
 
-<section>
-	<h1>
-		<div class="welcome">
-			<picture>
-				<source srcset="svelte-welcome.webp" type="image/webp" />
-				<img src="svelte-welcome.png" alt="Welcome" />
-			</picture>
-		</div>
 
-		to your new<br />SvelteKit app
-	</h1>
 
-	<h2>
-		Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, blanditiis voluptatum aperiam suscipit corrupti porro ratione voluptate enim expedita voluptatem omnis, quisquam animi laboriosam. Eius, architecto. Temporibus unde tenetur ea.
-	</h2>
 
-	<Counter />
+<section id="services">
+  <div class="container">
+        <div class="row row-cols-2">
+            <div class="col">
+                <h2>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, blanditiis voluptatum aperiam suscipit corrupti porro ratione voluptate enim expedita voluptatem omnis, quisquam animi laboriosam. Eius, architecto. Temporibus unde tenetur ea.
+                </h2>
+            </div>
+            <div class="col">
+                <h2>
+                    <Figure caption="I believe this is a cow needing a haircut">
+                        <Image fluid alt="Landscape" src="https://picsum.photos/id/200/800/600" />
+                    </Figure>
+                </h2>
+            </div>
+        </div>
+
+    </div>    
 </section>
 
 <style>
@@ -60,4 +67,52 @@
 		top: 0;
 		display: block;
 	}
+    .row {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        /* flex-wrap: wrap; */
+        margin-right: -15px;
+        margin-left: -15px;
+    }
+    .col-sm-4 {
+        position: relative;
+        width: 100%;
+        min-height: 1px;
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+    
+    .container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
 </style>

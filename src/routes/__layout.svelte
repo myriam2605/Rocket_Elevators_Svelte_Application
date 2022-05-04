@@ -8,43 +8,11 @@
 
 <main>
 	<slot />
-    <div>
-        <section id="services">
-            <div class="container">
-
-                <div class="row">
-                    <div class="col-sm-4">
-                        <img class="img-fluid" src="../../src/lib/header/rocket1.svg" alt="img" />
-                        <h3 class="mt-10">Prices and Projects</h3>
-                        <p>Rocket Elevator is a company that has overcome several challenges since its launch. Thanks to its dedicated team, it has several awards in its field.</p>
-                        <a href="home.html#portfolio" class="btn btn-default">PORTFOLIO</a>
-                    </div>
-
-                    <div class="col-sm-4">
-                        <img class="img-fluid" src="../../src/lib/header/rocket2.svg" alt="img" />
-                        <h3 class="mt-10">Residential Buildings</h3>
-                        <p>With our products and services, we are committed to making your home comfortable and safe with good quality. We are always ready to advise you.</p>
-                        <a href="about.html" class="btn btn-default">RESIDENTIAL</a>
-                    </div>
-
-                    <div class="col-sm-4">
-                        <img class="img-fluid" src="../../src/lib/header/rocket3.svg" alt="img" />
-                        <h3 class="mt-10">Corporate Buildings</h3>
-                        <p>Thanks to the skills of our teams, we are ready to take up the challenge of offering you a quality office in a short time as you wish or better.</p>
-                    <a href="todos.html" class="btn btn-default">CORPORATE</a>
-                    </div>
-
-                </div>
-
-            </div>
-        </section>
-
-
-    </div>
+    
 </main>
 
 <footer>
-	<p>visit <a href="https://https://rocketelevatormyrasofia.com/">Rocketelevatormyrasofia.com</a> to learn SvelteKit</p>
+	<p>visit <a href="https://rocketelevator.com/">Rocketelevator.com</a> to learn SvelteKit application</p>
     <div id="wrapper">    
     <div class="container">
           <div class="row">
@@ -122,22 +90,7 @@
     .copyright {
         text-align: center;
     }
-    .row {
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -ms-flex-wrap: wrap;
-        /* flex-wrap: wrap; */
-        margin-right: -15px;
-        margin-left: -15px;
-    }
-    .col-sm-4 {
-        position: relative;
-        width: 100%;
-        min-height: 1px;
-        padding-right: 15px;
-        padding-left: 15px;
-    }
+   
     
 	@media (min-width: 480px) {
 		footer {
