@@ -8,73 +8,39 @@
 
 <main>
 	<slot />
-    <section>
-        <div class="container">
-            <div class="row">
-            <div class="col-sm-4">
-            <a
-                class="image-hover lightbox"
-                href="#"
-                data-plugin-options='{"type":"iframe"}'
-            >
-                <span class="image-hover-icon image-hover-dark"
-                ><!-- image-hover-light | image-hover-dark -->
-                <!--	<i class="fa fa-vimeo-square"> video icon </i>  -->
-                </span>
-                <img
-                class="img-fluid"
-                src="../../images/residentiel1.jpg"
-                alt="img"
-                />
-            </a>
+    <div>
+        <section id="services">
+            <div class="container">
 
-            <h3 class="mt-10">Modern art</h3>
-            <p>
-                Rocket Elevator excels in the research of new technologies with
-                regard to any type of lift and seeks to adapt it to new
-                constructions, paying attention to the cost factor.
-            </p>
-            <a href="#" class="btn btn-default">READ MORE</a>
-            </div>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <img class="img-fluid" src="../../src/lib/header/rocket1.svg" alt="img" />
+                        <h3 class="mt-10">Prices and Projects</h3>
+                        <p>Rocket Elevator is a company that has overcome several challenges since its launch. Thanks to its dedicated team, it has several awards in its field.</p>
+                        <a href="home.html#portfolio" class="btn btn-default">PORTFOLIO</a>
+                    </div>
 
-            <div class="col-sm-4">
-            <a
-                class="image-hover lightbox"
-                href="#"
-                data-plugin-options='{"type":"iframe"}'
-            >
-                <span class="image-hover-icon image-hover-dark"
-                ><!-- image-hover-light | image-hover-dark -->
-                <!--	<i class="fa fa-youtube-square">  video icon </i> -->
-                </span>
-                <img
-                class="img-fluid"
-                src="../../images/residentiel2.jpg
-                alt="img"
-                />
-            </a>
-            <h3 class="mt-10">Expertise and mastery</h3>
-            <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. At architecto, esse consectetur accusantium sit officiis magni a. Dolor maxime rerum expedita in iure veniam provident dolore, obcaecati eum doloribus dicta?
-            </p>
-            <a href="#" class="btn btn-default">READ MORE</a>
-            </div>
+                    <div class="col-sm-4">
+                        <img class="img-fluid" src="../../src/lib/header/rocket2.svg" alt="img" />
+                        <h3 class="mt-10">Residential Buildings</h3>
+                        <p>With our products and services, we are committed to making your home comfortable and safe with good quality. We are always ready to advise you.</p>
+                        <a href="about.html" class="btn btn-default">RESIDENTIAL</a>
+                    </div>
 
-            <div class="col-sm-4">
-            <img
-                class="img-fluid"
-                src="../../images/residentielbon.jpg"
-                alt="img"
-            />
-            <h3 class="mt-10">Communication</h3>
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum animi molestias et id facere assumenda, ab explicabo repellat aut maiores at recusandae magnam illo inventore, optio eius pariatur a alias.
-            </p>
-            <a href="#" class="btn btn-default">READ MORE</a>
+                    <div class="col-sm-4">
+                        <img class="img-fluid" src="../../src/lib/header/rocket3.svg" alt="img" />
+                        <h3 class="mt-10">Corporate Buildings</h3>
+                        <p>Thanks to the skills of our teams, we are ready to take up the challenge of offering you a quality office in a short time as you wish or better.</p>
+                    <a href="todos.html" class="btn btn-default">CORPORATE</a>
+                    </div>
+
+                </div>
+
             </div>
-            </div>
-        </div>
-    </section>
+        </section>
+
+
+    </div>
 </main>
 
 <footer>
@@ -156,10 +122,63 @@
     .copyright {
         text-align: center;
     }
+    .row {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        /* flex-wrap: wrap; */
+        margin-right: -15px;
+        margin-left: -15px;
+    }
+    .col-sm-4 {
+        position: relative;
+        width: 100%;
+        min-height: 1px;
+        padding-right: 15px;
+        padding-left: 15px;
+    }
     
 	@media (min-width: 480px) {
 		footer {
 			padding: 40px 0;
 		}
+        .col-sm-4 {
+            -webkit-box-flex: 0;
+            -ms-flex: 0 0 33.333333%;
+            flex: 0 0 33.333333%;
+            max-width: 33.333333%;
+        }
 	}
+    .container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
 </style>
