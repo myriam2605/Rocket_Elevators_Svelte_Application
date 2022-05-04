@@ -8,6 +8,73 @@
 
 <main>
 	<slot />
+    <section>
+        <div class="container">
+            <div class="row">
+            <div class="col-sm-4">
+            <a
+                class="image-hover lightbox"
+                href="#"
+                data-plugin-options='{"type":"iframe"}'
+            >
+                <span class="image-hover-icon image-hover-dark"
+                ><!-- image-hover-light | image-hover-dark -->
+                <!--	<i class="fa fa-vimeo-square"> video icon </i>  -->
+                </span>
+                <img
+                class="img-fluid"
+                src="../../images/residentiel1.jpg"
+                alt="img"
+                />
+            </a>
+
+            <h3 class="mt-10">Modern art</h3>
+            <p>
+                Rocket Elevator excels in the research of new technologies with
+                regard to any type of lift and seeks to adapt it to new
+                constructions, paying attention to the cost factor.
+            </p>
+            <a href="#" class="btn btn-default">READ MORE</a>
+            </div>
+
+            <div class="col-sm-4">
+            <a
+                class="image-hover lightbox"
+                href="#"
+                data-plugin-options='{"type":"iframe"}'
+            >
+                <span class="image-hover-icon image-hover-dark"
+                ><!-- image-hover-light | image-hover-dark -->
+                <!--	<i class="fa fa-youtube-square">  video icon </i> -->
+                </span>
+                <img
+                class="img-fluid"
+                src="../../images/residentiel2.jpg
+                alt="img"
+                />
+            </a>
+            <h3 class="mt-10">Expertise and mastery</h3>
+            <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. At architecto, esse consectetur accusantium sit officiis magni a. Dolor maxime rerum expedita in iure veniam provident dolore, obcaecati eum doloribus dicta?
+            </p>
+            <a href="#" class="btn btn-default">READ MORE</a>
+            </div>
+
+            <div class="col-sm-4">
+            <img
+                class="img-fluid"
+                src="../../images/residentielbon.jpg"
+                alt="img"
+            />
+            <h3 class="mt-10">Communication</h3>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum animi molestias et id facere assumenda, ab explicabo repellat aut maiores at recusandae magnam illo inventore, optio eius pariatur a alias.
+            </p>
+            <a href="#" class="btn btn-default">READ MORE</a>
+            </div>
+            </div>
+        </div>
+    </section>
 </main>
 
 <footer>
@@ -68,7 +135,7 @@
 		font-weight: bold;
 	}
     .container p {
-        margin-right: 50%;
+        margin-right: 0%;
     }
     .num {
         font-weight: 100;

@@ -1,6 +1,6 @@
 <script>
 	import { page } from '$app/stores';
-	import logo from './svelte-logo.svg';
+	import logo from './image-logo.svg';
 </script>
 
 <header>
@@ -53,10 +53,12 @@
 	}
 
 	.corner img {
-		width: 2em;
-		height: 2em;
+        padding: 27% 0% 0% 349%;
+		width: 9em;
+		height: 6em;
 		object-fit: contain;
 	}
+
 
 	nav {
 		display: flex;

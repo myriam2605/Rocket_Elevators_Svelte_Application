@@ -24,7 +24,7 @@
 	</h1>
 
 	<h2>
-		try editing <strong>src/routes/index.svelte</strong>
+		Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, blanditiis voluptatum aperiam suscipit corrupti porro ratione voluptate enim expedita voluptatem omnis, quisquam animi laboriosam. Eius, architecto. Temporibus unde tenetur ea.
 	</h2>
 
 	<Counter />
@@ -42,7 +42,10 @@
 	h1 {
 		width: 100%;
 	}
-
+    h2 {
+    margin: 0% 15% 0% 15%;
+    text-align: center;
+    }
 	.welcome {
 		position: relative;
 		width: 100%;

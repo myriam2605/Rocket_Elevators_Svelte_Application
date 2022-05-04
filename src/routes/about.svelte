@@ -23,16 +23,13 @@
 	<h1>NFT Minting </h1>
 
 	<p>
-		This is a <a href="https://kit.svelte.dev">SvelteKit</a> app. You can make your own by typing the
-		following into your command line and following the prompts:
+		Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste sint asperiores minima. Esse iste ipsam ab praesentium ut fugit, nobis quod eos similique perspiciatis, quos doloribus animi impedit ipsa reprehenderit.
 	</p>
 
-	<pre>npm init svelte</pre>
+	<pre>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id molestiae odio totam quisquam neque modi adipisci culpa, unde deleniti quaerat, doloribus atque fugiat optio dolorum iure harum. Libero, possimus dolor?</pre>
 
 	<p>
-		The page you're looking at is purely static HTML, with no client-side interactivity needed.
-		Because of that, we don't need to load any JavaScript. Try viewing the page's source, or opening
-		the devtools network panel and reloading.
+		Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro, vitae! In molestiae delectus facilis perspiciatis non magni rem sequi incidunt corrupti exercitationem! Rerum maxime quisquam est eos dignissimos facilis! Nostrum.
 	</p>
 
 	<p>
