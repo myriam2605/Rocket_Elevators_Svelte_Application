@@ -2,18 +2,17 @@
 	import Header from '$lib/header/Header.svelte';
 	import '../app.css';
     import logo from '../../src/lib/header/image-logo.svg';
-    import {Icon}  from 'sveltestrap';
-
 </script>
 
 <Header />
 
 <main>
 	<slot />
+    
 </main>
 
 <footer>
-        
+    <div id="wrapper">    
         <div class="container">
           <div class="row">
                 <!-- col #1 -->
@@ -31,28 +30,21 @@
                 
                     <div class="corner col-md-6">
                         <a href="/">
-                            <img src={logo} alt="Rocket-Elevator" />
+                            <img src={logo} alt="Rocket-Elevator" style="width: 12em ; height: 6em"/>
                         </a>
                     </div>
 
-                <div>
-                    <h1>
-                         <Icon name="twitter" />
-                         <Icon name="facebook"/>
-                         <Icon name="linkedin" />
-                      </h1>
-                </div>
-            </div>
-            <div class="copyright">
-                <div class="container">
-                
-                    &copy; All Rights Reserved, Rocket Elevator LTD
-                </div>
+                <!-- /col #1 -->
             </div>
         </div>
 
-        
-  
+        <div class="copyright">
+          <div class="container">
+           
+            &copy; All Rights Reserved, Rocket Elevator LTD
+          </div>
+        </div>
+    </div>
 </footer>
 
 <style>
@@ -67,19 +59,12 @@
 		box-sizing: border-box;
 	}
 
-	/* footer {
+	footer {
 		display: flex;
 		flex-direction: column;
-		justify-content: center;
+		justify-content:space-between;
 		align-items: center;
-		padding: 40px;
-	} */
-    footer {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		padding: 1em;
-		background-color: var(--bs-dark);
+		padding: 20px;
 	}
 
     footer h2 {
@@ -155,11 +140,11 @@
     max-width: 1140px;
   }
 }
-
-.row .corner {
-    padding: 0% 0% 0% 60%;
-    /* width: 9em; */
-    /* height: 0em; */
-    object-fit: contain;
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
+
 </style>
