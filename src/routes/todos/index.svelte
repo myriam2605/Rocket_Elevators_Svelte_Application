@@ -105,7 +105,7 @@
         console.log("onMount contractInstance:", contractInstance)
 
         // const response = await fetch("https://rocket-elevators-express-api.herokuapp.com/NFT/getWalletTokens/${checkAccount}", {
-        const response = await fetch("https://rocket-elevators-express-api.herokuapp.com/NFT/getWalletTokens/0xF4F555ca1586C40067cd215578f123d30813De02", {
+        const response = await fetch(`https://rocket-elevators-express-api.herokuapp.com/NFT/getWalletTokens/${checkAccount}`, {
             method: "GET",
             headers: { 
                 "Content-Type":"RocketToken/json",
@@ -202,7 +202,7 @@
         {#if myData.length !== 0}
             {#each myData as data, i}
             <div>
-                <li><a href="https://rocket-elevators-express-api.herokuapp.com/NFT/getWalletTokens/0xF4F555ca1586C40067cd215578f123d30813De02">
+                <li><a href="https://rocket-elevators-express-api.herokuapp.com/NFT/getWalletTokens/${checkAccount}">
                     {i + 1}:<br><Image src= {data.image}/> <br><br>
                     {data.description} <br><br> {data.name}<br><br>
                     

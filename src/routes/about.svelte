@@ -37,10 +37,11 @@ import { Button } from 'sveltestrap';
         await defaultEvmStores.setBrowserProvider()
         message = ''
         contractInstance = await getContract(CONTRACT_ADDRESS)
+        contractInstance.options.address = CONTRACT_ADDRESS;
 
         console.log("onMount contractInstance:", contractInstance)
 
-        const response = await fetch("https://rocket-elevators-express-api.herokuapp.com/NFT/gift/0x178625C9EBdD61307e0d63643aF7D1612B99408d", {
+        const response = await fetch(`https://rocket-elevators-express-api.herokuapp.com/NFT/gift/${checkAccount}`, {
             method: "GET",
             headers: { 
                 "Content-Type":"RocketToken/json",
@@ -51,7 +52,7 @@ import { Button } from 'sveltestrap';
 
         console.log("onMount userData: ", myData);
         
-        const response2 = await fetch("https://rocket-elevators-express-api.herokuapp.com/NFT/allowance/0x178625C9EBdD61307e0d63643aF7D1612B99408d", {
+        const response2 = await fetch(`https://rocket-elevators-express-api.herokuapp.com/NFT/allowance/${checkAccount}`, {
             method: "GET",
             headers: { 
                 "Content-Type":"RocketToken/json",
@@ -76,6 +77,40 @@ import { Button } from 'sveltestrap';
         }
       );
     }
+
+    const getFreeNFT = async () => {
+        const response3 = await fetch(`https://rocket-elevators-express-api.herokuapp.com/NFT/gift/${checkAccount}`, {
+            method: "POST",
+            headers: { 
+                "Content-Type":"application/json",
+            }
+        });
+        alert("New NFT is Received! You can see it on the Portfolio page.")
+    }
+
+    const allowance = async () => {
+        console.log() 
+        await contractInstance.methods.approve("0xB16dB76BC1b994b5Da6edB14bCd4c2883A6772Bf", 1).send({
+            from: checkAccount,
+        });
+        myData2 = true
+    }
+
+    const BuyNFT = async () => {
+        const response4 = await fetch(`https://rocket-elevators-express-api.herokuapp.com/NFT/buyWithRocket/${checkAccount}`, {
+            method: "POST",
+            headers: { 
+                "Content-Type":"application/json",
+            }
+        });
+        if(response4.status == 200) {
+            alert("New NFT is correctly purchased! You can see it on the Portfolio page.")
+        } else {
+            alert("Ooops, please try again")
+        }
+        
+    }
+
 </script>
 
 <svelte:head>
@@ -97,17 +132,15 @@ import { Button } from 'sveltestrap';
     
 
             {#if myData == true}
-                {'https://rocket-elevators-express-api.herokuapp.com/NFT/gift/0x178625C9EBdD61307e0d63643aF7D1612B99408d'}
-                <button >
-                        Get Free NFT
-                </button>
+                <!-- {'https://rocket-elevators-express-api.herokuapp.com/NFT/gift/0x178625C9EBdD61307e0d63643aF7D1612B99408d'} -->
+                <button class="btn btn-secondary d-block w-100" on:click={getFreeNFT}  href='https://rocket-elevators-express-api.herokuapp.com/NFT/gift/0x178625C9EBdD61307e0d63643aF7D1612B99408d' style="font-size: 2em; width: 100%; padding: 2% 10%; color: #f44336);"> Get Free NFT</button>
                 {:else } 
                         
                         {#if myData2 }
-                        <button class="btn btn-secondary d-block w-100"  href='https://rocket-elevators-express-api.herokuapp.com/NFT/gift/0x178625C9EBdD61307e0d63643aF7D1612B99408d' style="font-size: 2em; width: 100%; padding: 2% 10%; color: #f44336);">Payment Required</button>
+                        <button class="btn btn-secondary d-block w-100" on:click={BuyNFT}  href='https://rocket-elevators-express-api.herokuapp.com/NFT/gift/0x178625C9EBdD61307e0d63643aF7D1612B99408d' style="font-size: 2em; width: 100%; padding: 2% 10%; color: #f44336);">Payment Required</button>
 
                             {:else}
-                            <button class="btn btn-secondary d-block w-100"  href='https://rocket-elevators-express-api.herokuapp.com/NFT/gift/0x178625C9EBdD61307e0d63643aF7D1612B99408d' style="font-size: 2em; width: 100%; padding: 2% 10%; color: #f44336);">Please approve transaction</button>
+                            <button class="btn btn-secondary d-block w-100" on:click={allowance}  href='https://rocket-elevators-express-api.herokuapp.com/NFT/gift/0x178625C9EBdD61307e0d63643aF7D1612B99408d' style="font-size: 2em; width: 100%; padding: 2% 10%; color: #f44336);">Please approve transaction</button>
 
                         
                         {/if}
