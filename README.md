@@ -1,14 +1,12 @@
 # Rocket_Elevators_Svelte_Application
 
+My branche main is : myra-svelte
+
 ## create a new project in the current directory
 
 npm init svelte
 
-## create a new project in my-app
-
-npm init svelte my-app
-
-## To run my code
+## To run my code you have to be in myra-svelte branche
 
 npm run dev
 
