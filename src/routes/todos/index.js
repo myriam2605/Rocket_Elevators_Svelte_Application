@@ -1,4 +1,5 @@
 import { api } from './_api';
+import { connected, web3, selectedAccount, chainId, chainData } from 'svelte-web3';
 
 /** @type {import('./index').RequestHandler} */
 export const get = async ({ locals }) => {

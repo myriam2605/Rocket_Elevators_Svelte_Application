@@ -1,67 +1,43 @@
 <script>
 	import Header from '$lib/header/Header.svelte';
 	import '../app.css';
-    
+    import logo from '../../src/lib/header/image-logo.svg';
+    import { connected, web3, selectedAccount, chainId, chainData } from 'svelte-web3'
+
 </script>
 
 <Header />
 
 <main>
 	<slot />
-    <div>
-        <section id="services">
-            <div class="container">
-
-                <div class="row">
-                    <div class="col-sm-4">
-                        <img class="img-fluid" src="../../src/lib/header/rocket1.svg" alt="img" />
-                        <h3 class="mt-10">Prices and Projects</h3>
-                        <p>Rocket Elevator is a company that has overcome several challenges since its launch. Thanks to its dedicated team, it has several awards in its field.</p>
-                        <a href="home.html#portfolio" class="btn btn-default">PORTFOLIO</a>
-                    </div>
-
-                    <div class="col-sm-4">
-                        <img class="img-fluid" src="../../src/lib/header/rocket2.svg" alt="img" />
-                        <h3 class="mt-10">Residential Buildings</h3>
-                        <p>With our products and services, we are committed to making your home comfortable and safe with good quality. We are always ready to advise you.</p>
-                        <a href="about.html" class="btn btn-default">RESIDENTIAL</a>
-                    </div>
-
-                    <div class="col-sm-4">
-                        <img class="img-fluid" src="../../src/lib/header/rocket3.svg" alt="img" />
-                        <h3 class="mt-10">Corporate Buildings</h3>
-                        <p>Thanks to the skills of our teams, we are ready to take up the challenge of offering you a quality office in a short time as you wish or better.</p>
-                    <a href="todos.html" class="btn btn-default">CORPORATE</a>
-                    </div>
-
-                </div>
-
-            </div>
-        </section>
-
-
-    </div>
+    
 </main>
 
 <footer>
-	<p>visit <a href="https://https://rocketelevatormyrasofia.com/">Rocketelevatormyrasofia.com</a> to learn SvelteKit</p>
     <div id="wrapper">    
-    <div class="container">
+        <div class="container">
           <div class="row">
-            <!-- col #1 -->
-            <div class="col-md-8">
-              <h3 class="letter-spacing-1">WHY US?</h3>
+                <!-- col #1 -->
+                    <div class="col-md-6">
+                        <h3 class="letter-spacing-1">WHY US?</h3>
 
-              <!-- Small Description -->
-              <p >
-                We have the conviction that we create the most innovative and
-                reliable products on the market. Contact us today for any
-                questions you might have.
-              </p>
-              <h2 class="num">(418) 555-1234</h2>
+                        <!-- Small Description -->
+                        <p >
+                            We have the conviction that we create the most innovative and
+                            reliable products on the market. Contact us today for any
+                            questions you might have.
+                        </p>
+                        <h2 class="num">(418) 555-1234</h2>
+                    </div>
+                
+                    <div class="corner col-md-6">
+                        <a href="/">
+                            <img src={logo} alt="Rocket-Elevator" style="width: 12em ; height: 6em"/>
+                        </a>
+                    </div>
+
+                <!-- /col #1 -->
             </div>
-            <!-- /col #1 -->
-          </div>
         </div>
 
         <div class="copyright">
@@ -88,9 +64,11 @@
 	footer {
 		display: flex;
 		flex-direction: column;
-		justify-content: center;
+		justify-content:space-between;
 		align-items: center;
-		padding: 40px;
+		/* padding: 20px; */
+        padding: 2% 0px;
+        background: #dae2ef;
 	}
 
     footer h2 {
@@ -101,7 +79,7 @@
 		font-weight: bold;
 	}
     .container p {
-        margin-right: 0%;
+        margin-right: 20%;
     }
     .num {
         font-weight: 100;
@@ -122,26 +100,11 @@
     .copyright {
         text-align: center;
     }
-    .row {
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -ms-flex-wrap: wrap;
-        /* flex-wrap: wrap; */
-        margin-right: -15px;
-        margin-left: -15px;
-    }
-    .col-sm-4 {
-        position: relative;
-        width: 100%;
-        min-height: 1px;
-        padding-right: 15px;
-        padding-left: 15px;
-    }
+   
     
 	@media (min-width: 480px) {
 		footer {
-			padding: 40px 0;
+			padding: 2% 0;
 		}
         .col-sm-4 {
             -webkit-box-flex: 0;
@@ -181,4 +144,11 @@
     max-width: 1140px;
   }
 }
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
 </style>
