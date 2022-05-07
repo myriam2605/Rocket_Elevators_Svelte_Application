@@ -1,10 +1,10 @@
 # Rocket_Elevators_Svelte_Application
 
-# create a new project in the current directory
+## create a new project in the current directory
 
 npm init svelte
 
-# create a new project in my-app
+## create a new project in my-app
 
 npm init svelte my-app
 
