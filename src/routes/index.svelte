@@ -38,37 +38,40 @@
 <section>
 	<div class="slideHome">
 		<div >
-			<Figure caption="The 'Ahead AdScreen' from Schindler turns the cabin wall into a screen.
-            Photo: Schindler" style="font-size:80%;">
-                <Image fluid alt="Landscape" src="https://www.urban-hub.com/wp/wp-content/uploads/2020/11/AGILE_Touchpad.jpg" style="display: flex;
+			<Figure caption="PHOTOGRAPH: PAUL YEUNG/BLOOMBERG/GETTY IMAGES" style="font-size:80%;">
+                <Image fluid alt="Landscape" src="https://media.wired.com/photos/622bde93d53a49d05c484009/16:9/w_2400,h_1350,c_limit/NFTs-Don't-Work-They-Way-You-Think-Gear-1239020052.jpg" style="display: flex;
                 width: 100%;
                 flex-wrap:nowrap;
                 justify-content: space-between;
                 align-items: center;
                 flex-direction: row;
-                align-content: center;"/>
+                align-content: center;
+                "/>
             </Figure>
 				<!-- <source srcset="svelte-welcome.webp" type="image/webp" /> -->
 				<!-- <img src="../../images/china.jpeg"  /> -->
 		
 		</div>
         <div>
-            <h3>
-                What forces are really driving innovation in elevator services today?
+            <h3 style="margin: 3% 5%;">
+                NFTs Don’t Work the Way You Might Think They Do <br>
+                <br> We bust the biggest misconceptions about what "minting" actually means.
             </h3>
             
             <h2 style="
                 text-align: justify;
                 max-width: fit-content;
-                display: flex;
+                display:flex
                 justify-content: center;
+                line-height: 1.5;
+                margin: 0% 5%;
                 align-items: center;
             ">
-                “This is a great question. The answer is customer needs – combined with a shared vision across a competent team of people who are aligned and driven to solve the customer’s problem is the driving force behind a lot of innovation.
+                “IT’S BEEN IMPOSSIBLE to avoid hearing about NFTs in recent months. Hype for the tokens—pitched as proof of ownership of a digital item—has reached a fever pitch, while billions of dollars have poured into the market for them. To some, these non-fungible tokens are the hottest new collectible hobby, to others a powerful investment tool, and still more, they’re the future of the internet.
 
-                Take, for example, one of our forward-looking customers in New York City. They asked if we could help them make our elevators ‘touchless’. We didn’t have a product, but with our experience in AGILE security and access control, as well as insights from robot integrations, we went from idea to an on-board solution in seven weeks.
+                The reality is, as always, more complex. In their current state, NFTs aren’t actually capable of doing much of what they’re often claimed to do. The extremely technical nature of how NFTs, blockchains, and cryptocurrencies work means that it’s easy to simplify the explanation of the tech to the point of being misleading.
                 
-                We accomplished it with a dynamic team of people that included our customer’s cybersecurity and IT team, a long-time industry technology partner, and our own dedicated and intelligent technologists.”
+                Explaining the problems with NFTs is complicated, but we’re going to try to break down the issues as succinctly as we can. We have to tackle this with the understanding that no explanation, no matter how in-depth, can ever be totally comprehensive. With that in mind, there are some misconceptions about NFTs that are worth clearing up...”
             </h2>
         </div>
 
@@ -161,7 +164,7 @@
     }
    .slideHome{
 
-        display: flex;
+        /* display: flex; */
         flex-direction: row-reverse;
         flex-wrap: nowrap;
         align-content: center;
