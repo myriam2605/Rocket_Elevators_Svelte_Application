@@ -30,71 +30,6 @@
     let contractInstance;
     $: checkAccount = $selectedAccount || '0x0000000000000000000000000000000000000000'
 
-// const response = fetch('https://rocket-elevators-express-api.herokuapp.com/NFT/getWalletTokens/${checkAccount}');
-// --------------------------------------------------------//
-//     async function getWalletTokens() {
-//     if (!window.ethereum) {
-//       return;
-//     }
-    
-//     const provider = new ethers.providers.Web3Provider(window.ethereum);
-//     const contractInstance = new ethers.Contract(
-//       CONTRACT_ADDRESS,
-//       RocketTokenContract.abi,
-//       provider
-//     );
-//     const recievedWallet = await contractInstance.getWalletTokens();
-    
-//     if (!recievedWallet) {
-//       walletList = [];
-//       return;
-//     }
-    
-//     const normalizeWallet = (wallet) => ({
-//       image: wallet.image,
-//       description: wallet.description,
-//       name: wallet.name,
-//     //   timestamp: new Date(wallet.timestamp * 1000),
-//     });
-    
-//     walletList = recievedWallet
-//       .map(normalizeWallet)
-//     //   .sort((a, b) => b.timestamp - a.timestamp);
-//     console.log('walletList: ', walletList);
-//     return;
-//   }
-
-// ----------------------------------------------------------------------//
-
-    // export async function main({request}) {
-    // const body = await request.json();
-    //     const token = body.accessToken;
-    //     const response = await fetch("https://rocket-elevators-express-api.herokuapp.com/NFT/getWalletTokens/${checkAccount}", {
-    //         method: "GET",
-    //         headers: { 
-    //             "Content-Type":"RocketToken/json",
-    //             "Authorization": `Bearer ${token}`},
-    //     });
-
-    //     const userData = await response.json();
-    //     console.log(userData);
-    
-    // }   
-    
-// -----------------------------------------------------------------//
-    // async function main() {
-    // const MyNFT = await ethers.getContractFactory("MyNFT")
-
-
-    // // Start deployment, returning a promise that resolves to a contract object
-    // const myNFT = await MyNFT.deploy()
-    // await myNFT.deployed()
-    // console.log("Contract deployed to address:", myNFT.address)
-    // }
-    // let address='https://rocket-elevators-express-api.herokuapp.com/NFT/getWalletTokens/${checkAccount}'
-
-//--------------------------------------------------------------------------//
-
     onMount(
       async () => {
         message = 'Connecting...'
@@ -114,11 +49,9 @@
         const userData = await response.json();
         myData = userData;
 
-        console.log("onMount userData: ", myData);
-        
+        console.log("onMount userData: ", myData);     
       }
     )
-
     async function getContract(address) {
       const networkId = await $web3.eth.net.getId();
       const deployedNetwork = RocketTokenContract.networks[networkId];
@@ -138,65 +71,7 @@
 </svelte:head>
 <br><br><br><br>
 
-
-<!-- <div class="todos">
-	<h1>Portfolio</h1>
-
-	<form
-		class="new"
-		action="/todos"
-		method="post"
-		use:enhance={{
-			result: async ({ form }) => {
-				form.reset();
-			}
-		}}
-	>
-		<input name="text" aria-label="Add todo" placeholder="+ tap to add a todo" />
-	</form>
-
-	{#each todos as todo (todo.uid)}
-		<div
-			class="todo"
-			class:done={todo.done}
-			transition:scale|local={{ start: 0.7 }}
-			animate:flip={{ duration: 200 }}
-		>
-			<form
-				action="/todos?_method=PATCH"
-				method="post"
-				use:enhance={{
-					pending: ({ data }) => {
-						todo.done = !!data.get('done');
-					}
-				}}
-			>
-				<input type="hidden" name="uid" value={todo.uid} />
-				<input type="hidden" name="done" value={todo.done ? '' : 'true'} />
-				<button class="toggle" aria-label="Mark todo as {todo.done ? 'not done' : 'done'}" />
-			</form>
-
-			<form class="text" action="/todos?_method=PATCH" method="post" use:enhance>
-				<input type="hidden" name="uid" value={todo.uid} />
-				<input aria-label="Edit todo" type="text" name="text" value={todo.text} />
-				<button class="save" aria-label="Save todo" />
-			</form>
-
-			<form
-				action="/todos?_method=DELETE"
-				method="post"
-				use:enhance={{
-					pending: () => (todo.pending_delete = true)
-				}}
-			>
-				<input type="hidden" name="uid" value={todo.uid} />
-				<button class="delete" aria-label="Delete todo" disabled={todo.pending_delete} />
-			</form>
-		</div>
-	{/each}
-</div> -->
 <body>
-
     <h1> NFT 's Details *</h1>
     <ul>
         {#if myData.length !== 0}
@@ -205,18 +80,12 @@
                 <li><a href="https://rocket-elevators-express-api.herokuapp.com/NFT/getWalletTokens/${checkAccount}">
                     {i + 1}:<br><Image src= {data.image}/> <br><br>
                     {data.description} <br><br> {data.name}<br><br>
-                    
-
                 </a></li>
             </div>
             {/each}
         {/if}
 
     </ul>
-
-
-
-
 </body>
 <style>
 	.todos {
@@ -239,7 +108,6 @@
 		border: 1px solid #ff3e00 !important;
 		outline: none;
 	}
-
 	.new input {
 		font-size: 28px;
 		width: 100%;
@@ -249,7 +117,6 @@
 		border-radius: 8px;
 		text-align: center;
 	}
-
 	.todo {
 		display: grid;
 		grid-template-columns: 2rem 1fr 2rem;

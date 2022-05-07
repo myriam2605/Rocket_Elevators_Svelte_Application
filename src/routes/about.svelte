@@ -122,18 +122,10 @@ import { Button } from 'sveltestrap';
 <div class="content">
 	<h1>NFT Minting </h1>
         <ul>
-            <!-- {#if myData == true}
-                {#each myData as data}
-                    {Button style='color:red'> ='https://rocket-elevators-express-api.herokuapp.com/NFT/gift/0x178625C9EBdD61307e0d63643aF7D1612B99408d'}   
-                {console.log: ('test')} 
-                    {:else } 
-                     {'https://rocket-elevators-express-api.herokuapp.com/NFT/allowance/0x178625C9EBdD61307e0d63643aF7D1612B99408d'}
-                     
-            {/if} -->
+           
     
 
             {#if myData == true}
-                <!-- {'https://rocket-elevators-express-api.herokuapp.com/NFT/gift/0x178625C9EBdD61307e0d63643aF7D1612B99408d'} -->
                 <button class="btn btn-secondary d-block w-100" on:click={getFreeNFT}  href='https://rocket-elevators-express-api.herokuapp.com/NFT/gift/0x178625C9EBdD61307e0d63643aF7D1612B99408d' style="    display: flex;
                 font-size: 2em;
                 width: 100%;
