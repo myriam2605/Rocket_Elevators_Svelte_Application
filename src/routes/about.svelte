@@ -104,8 +104,9 @@ import { Button } from 'sveltestrap';
             }
         });
         if(response4.status == 200) {
-            alert("New NFT is correctly purchased! You can see it on the Portfolio page.")
-        } else {
+            alert("New NFT is correctly purchased! You can see it on the Portfolio page.");
+            window.location.href = "/todos";
+        } else {  
             alert("Ooops, please try again")
         }
         
@@ -133,14 +134,43 @@ import { Button } from 'sveltestrap';
 
             {#if myData == true}
                 <!-- {'https://rocket-elevators-express-api.herokuapp.com/NFT/gift/0x178625C9EBdD61307e0d63643aF7D1612B99408d'} -->
-                <button class="btn btn-secondary d-block w-100" on:click={getFreeNFT}  href='https://rocket-elevators-express-api.herokuapp.com/NFT/gift/0x178625C9EBdD61307e0d63643aF7D1612B99408d' style="font-size: 2em; width: 100%; padding: 2% 10%; color: #f44336);"> Get Free NFT</button>
+                <button class="btn btn-secondary d-block w-100" on:click={getFreeNFT}  href='https://rocket-elevators-express-api.herokuapp.com/NFT/gift/0x178625C9EBdD61307e0d63643aF7D1612B99408d' style="    display: flex;
+                font-size: 2em;
+                width: 100%;
+                padding: 2% 0%;
+                cursor: pointer;
+                align-items: center;
+                justify-content: center;
+                align-content: space-between;
+                flex-wrap: nowrap;
+                flex-direction: row;);"> Get Free NFT</button>
                 {:else } 
                         
                         {#if myData2 }
-                        <button class="btn btn-secondary d-block w-100" on:click={BuyNFT}  href='https://rocket-elevators-express-api.herokuapp.com/NFT/gift/0x178625C9EBdD61307e0d63643aF7D1612B99408d' style="font-size: 2em; width: 100%; padding: 2% 10%; color: #f44336);">Payment Required</button>
+                        <button class="btn btn-secondary d-block w-100" on:click={BuyNFT}  href='https://rocket-elevators-express-api.herokuapp.com/NFT/gift/0x178625C9EBdD61307e0d63643aF7D1612B99408d' style="    display: flex;
+                        font-size: 2em;
+                        width: 100%;
+                        padding: 2% 0%;
+                        cursor: pointer;
+                        align-items: center;
+                        justify-content: center;
+                        align-content: space-between;
+                        flex-wrap: nowrap;
+                        flex-direction: row;);">Payment Required</button>
 
                             {:else}
-                            <button class="btn btn-secondary d-block w-100" on:click={allowance}  href='https://rocket-elevators-express-api.herokuapp.com/NFT/gift/0x178625C9EBdD61307e0d63643aF7D1612B99408d' style="font-size: 2em; width: 100%; padding: 2% 10%; color: #f44336);">Please approve transaction</button>
+
+
+                            <button class="btn btn-secondary d-block w-100" on:click={allowance}  href='https://rocket-elevators-express-api.herokuapp.com/NFT/gift/0x178625C9EBdD61307e0d63643aF7D1612B99408d' style="    display: flex;
+                            font-size: 2em;
+                            width: 100%;
+                            padding: 2% 0%;
+                            cursor: pointer;
+                            align-items: center;
+                            justify-content: center;
+                            align-content: space-between;
+                            flex-wrap: nowrap;
+                            flex-direction: row;);">Please approve transaction</button>
 
                         
                         {/if}
@@ -150,8 +180,9 @@ import { Button } from 'sveltestrap';
         </ul>
 	
 
-	<p>
-		The <a href="/todos">Portfolio</a> page illustrates all details about NFTs purchased. Use the corresponding link!
+	<p style='margin-left:16%'>
+		The <a href="/todos">Portfolio</a> page illustrates all details about NFTs purchased.
+        <br> Use the corresponding link!
 	</p>
 </div>
 
