@@ -16,6 +16,8 @@ const base = 'https://api.svelte.dev';
  * @param {string} resource
  * @param {Record<string, unknown>} [data]
  */
+import { connected, web3, selectedAccount, chainId, chainData } from 'svelte-web3';
+
 export function api(method, resource, data) {
 	return fetch(`${base}/${resource}`, {
 		method,

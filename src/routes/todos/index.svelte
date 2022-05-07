@@ -2,6 +2,7 @@
 	import { enhance } from '$lib/form';
 	import { scale } from 'svelte/transition';
 	import { flip } from 'svelte/animate';
+    import {onMount} from 'svelte'
 
 	/**
 	 * @typedef {{
@@ -15,14 +16,130 @@
 
 	/** @type {Todo[]} */
 	export let todos;
+    export let message;
+    export let myData = [];
+
+    import { defaultEvmStores, web3, selectedAccount, connected, chainId, chainData } from 'svelte-web3'
+    import RocketTokenContract from './RocketToken.json';
+    import Image from 'sveltestrap/src/Image.svelte';
+    import { dataset_dev } from 'svelte/internal';
+    import About from '../about.svelte';
+
+    const CONTRACT_ADDRESS = '0x4D266d91e6bf8f111f0068E8990d43093FDA1b27';
+
+    let contractInstance;
+    $: checkAccount = $selectedAccount || '0x0000000000000000000000000000000000000000'
+
+// const response = fetch('https://rocket-elevators-express-api.herokuapp.com/NFT/getWalletTokens/${checkAccount}');
+// --------------------------------------------------------//
+//     async function getWalletTokens() {
+//     if (!window.ethereum) {
+//       return;
+//     }
+    
+//     const provider = new ethers.providers.Web3Provider(window.ethereum);
+//     const contractInstance = new ethers.Contract(
+//       CONTRACT_ADDRESS,
+//       RocketTokenContract.abi,
+//       provider
+//     );
+//     const recievedWallet = await contractInstance.getWalletTokens();
+    
+//     if (!recievedWallet) {
+//       walletList = [];
+//       return;
+//     }
+    
+//     const normalizeWallet = (wallet) => ({
+//       image: wallet.image,
+//       description: wallet.description,
+//       name: wallet.name,
+//     //   timestamp: new Date(wallet.timestamp * 1000),
+//     });
+    
+//     walletList = recievedWallet
+//       .map(normalizeWallet)
+//     //   .sort((a, b) => b.timestamp - a.timestamp);
+//     console.log('walletList: ', walletList);
+//     return;
+//   }
+
+// ----------------------------------------------------------------------//
+
+    // export async function main({request}) {
+    // const body = await request.json();
+    //     const token = body.accessToken;
+    //     const response = await fetch("https://rocket-elevators-express-api.herokuapp.com/NFT/getWalletTokens/${checkAccount}", {
+    //         method: "GET",
+    //         headers: { 
+    //             "Content-Type":"RocketToken/json",
+    //             "Authorization": `Bearer ${token}`},
+    //     });
+
+    //     const userData = await response.json();
+    //     console.log(userData);
+    
+    // }   
+    
+// -----------------------------------------------------------------//
+    // async function main() {
+    // const MyNFT = await ethers.getContractFactory("MyNFT")
+
+
+    // // Start deployment, returning a promise that resolves to a contract object
+    // const myNFT = await MyNFT.deploy()
+    // await myNFT.deployed()
+    // console.log("Contract deployed to address:", myNFT.address)
+    // }
+    // let address='https://rocket-elevators-express-api.herokuapp.com/NFT/getWalletTokens/${checkAccount}'
+
+//--------------------------------------------------------------------------//
+
+    onMount(
+      async () => {
+        message = 'Connecting...'
+        await defaultEvmStores.setBrowserProvider()
+        message = ''
+        contractInstance = await getContract(CONTRACT_ADDRESS)
+
+        console.log("onMount contractInstance:", contractInstance)
+
+        // const response = await fetch("https://rocket-elevators-express-api.herokuapp.com/NFT/getWalletTokens/${checkAccount}", {
+        const response = await fetch("https://rocket-elevators-express-api.herokuapp.com/NFT/getWalletTokens/0xF4F555ca1586C40067cd215578f123d30813De02", {
+            method: "GET",
+            headers: { 
+                "Content-Type":"RocketToken/json",
+            }
+        });
+        const userData = await response.json();
+        myData = userData;
+
+        console.log("onMount userData: ", myData);
+        
+      }
+    )
+
+    async function getContract(address) {
+      const networkId = await $web3.eth.net.getId();
+      const deployedNetwork = RocketTokenContract.networks[networkId];
+      return new $web3.eth.Contract(
+          RocketTokenContract.abi,
+        deployedNetwork && deployedNetwork.address, {
+          from: address,
+          gas: 2000000
+        }
+      );
+    }
 </script>
 
 <svelte:head>
 	<title>Portfolio</title>
 	<meta name="description" content="A todo list app" />
 </svelte:head>
+<br><br><br><br>
 
-<div class="todos">
+
+<!-- <div class="todos">
 	<h1>Portfolio</h1>
 
 	<form
@@ -77,41 +194,30 @@
 			</form>
 		</div>
 	{/each}
-</div>
-<div>
-    <section id="services">
-        <div class="container">
+</div> -->
+<body>
 
-            <div class="row">
-                <div class="col-sm-4">
-                    <img class="img-fluid" src="../../src/lib/header/rocket1.svg" alt="img" />
-                    <h3 class="mt-10">Prices and Projects</h3>
-                    <p>Rocket Elevator is a company that has overcome several challenges since its launch. Thanks to its dedicated team, it has several awards in its field.</p>
-                    <a href="home.html#portfolio" class="btn btn-default">PORTFOLIO</a>
-                </div>
+    <h1> NFT 's Details *</h1>
+    <ul>
+        {#if myData.length !== 0}
+            {#each myData as data, i}
+            <div>
+                <li><a href="https://rocket-elevators-express-api.herokuapp.com/NFT/getWalletTokens/0xF4F555ca1586C40067cd215578f123d30813De02">
+                    {i + 1}:<br><Image src= {data.image}/> <br><br>
+                    {data.description} <br><br> {data.name}<br><br>
+                    
 
-                <div class="col-sm-4">
-                    <img class="img-fluid" src="../../src/lib/header/rocket2.svg" alt="img" />
-                    <h3 class="mt-10">Residential Buildings</h3>
-                    <p>With our products and services, we are committed to making your home comfortable and safe with good quality. We are always ready to advise you.</p>
-                    <a href="about.html" class="btn btn-default">RESIDENTIAL</a>
-                </div>
-
-                <div class="col-sm-4">
-                    <img class="img-fluid" src="../../src/lib/header/rocket3.svg" alt="img" />
-                    <h3 class="mt-10">Corporate Buildings</h3>
-                    <p>Thanks to the skills of our teams, we are ready to take up the challenge of offering you a quality office in a short time as you wish or better.</p>
-                <a href="todos.html" class="btn btn-default">CORPORATE</a>
-                </div>
-
+                </a></li>
             </div>
+            {/each}
+        {/if}
 
-        </div>
-    </section>
+    </ul>
 
 
-</div>
 
+
+</body>
 <style>
 	.todos {
 		width: 100%;

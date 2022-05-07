@@ -2,6 +2,8 @@
 	import Header from '$lib/header/Header.svelte';
 	import '../app.css';
     import logo from '../../src/lib/header/image-logo.svg';
+    import { connected, web3, selectedAccount, chainId, chainData } from 'svelte-web3'
+
 </script>
 
 <Header />
@@ -64,7 +66,9 @@
 		flex-direction: column;
 		justify-content:space-between;
 		align-items: center;
-		padding: 20px;
+		/* padding: 20px; */
+        padding: 2% 0px;
+        background: #dae2ef;
 	}
 
     footer h2 {
@@ -75,7 +79,7 @@
 		font-weight: bold;
 	}
     .container p {
-        margin-right: 50%;
+        margin-right: 20%;
     }
     .num {
         font-weight: 100;
@@ -100,7 +104,7 @@
     
 	@media (min-width: 480px) {
 		footer {
-			padding: 40px 0;
+			padding: 2% 0;
 		}
         .col-sm-4 {
             -webkit-box-flex: 0;
